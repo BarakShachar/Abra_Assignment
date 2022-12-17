@@ -139,3 +139,5 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60)
 }
+
+CSRF_TRUSTED_ORIGINS = ['*']
