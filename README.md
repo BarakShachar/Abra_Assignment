@@ -20,4 +20,4 @@
 
 6. Get messages - in order to get all **unread** messages add 
 {“messages”:”unread”} to request params, if you want to 
-get **all** messages send the request without params.
+get **all** messages, send the request without params.
