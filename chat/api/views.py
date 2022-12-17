@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated
-from chat.serializers import MessageCreateSerializer, MessageSerializer
+from chat.api.serializers import MessageCreateSerializer, MessageSerializer
 
 
 class MessageView(APIView):
