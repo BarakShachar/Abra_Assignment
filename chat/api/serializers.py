@@ -1,29 +1,17 @@
 from rest_framework import serializers
 from chat.models import Message
-from django.contrib.auth.models import User
 
 
 class MessageCreateSerializer(serializers.ModelSerializer):
-    sender = serializers.SlugRelatedField(
-        queryset=User.objects.all(),
-        slug_field="username"
-    )
-    receiver = serializers.SlugRelatedField(
-        queryset=User.objects.all(),
-        slug_field="username"
-    )
 
     class Meta:
         model = Message
-        fields = ['uuid', 'sender', 'subject', 'message', 'receiver', 'creation_date']
+        fields = ['sender', 'subject', 'message', 'receiver']
 
 
 class MessageSerializer(serializers.ModelSerializer):
-    sender = serializers.SlugRelatedField(
-        queryset=User.objects.all(),
-        slug_field="username"
-    )
+    sent_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
 
     class Meta:
         model = Message
-        fields = ['uuid', 'creation_date', 'sender', 'subject', 'message']
+        fields = ['uuid', 'sent_at', 'sender', 'subject', 'message']
