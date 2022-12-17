@@ -5,8 +5,8 @@
 1. Create users in django admin app
 
 
-2. Generate token using “token” endpoint 
-(you need username & password)
+2. Generate a token using the “token” endpoint 
+(you need to add username & password to the body request)
 
 
 3. Add token to the postman-collection-variables
