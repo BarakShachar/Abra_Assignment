@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Messages(models.Model):
+class Message(models.Model):
+    uuid = models.UUIDField(blank=False, unique=True, primary_key=True)
     sender = models.ForeignKey(
         User,
         related_name="message_sender",
