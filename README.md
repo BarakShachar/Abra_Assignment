@@ -12,12 +12,15 @@
 3. Add a token to the postman-collection-variables
 
 
-4. Send messages (to other users by their username) & read messages
+4. Send messages (to other users by their username) 
 
 
-5. You can only delete messages sent or received by you
+5. read messages- the oldest message you haven't read yet.
 
 
-6. Get messages - in order to get all **unread** messages add 
+6. You can only delete messages sent or received by you
+
+
+7. Get messages - in order to get all **unread** messages add 
 {“messages”:”unread”} to request params, if you want to 
-get **all** messages, send the request without params.
+get **all** messages, send the request without params. (this method does not count as read message)
