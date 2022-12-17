@@ -9,10 +9,10 @@
 (you need to add username & password to the body request)
 
 
-3. Add token to the postman-collection-variables
+3. Add a token to the postman-collection-variables
 
 
-4. Send messages, read messages
+4. Send messages (to other users by their username) & read messages
 
 
 5. You can only delete messages sent or received by you
