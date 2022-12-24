@@ -1,11 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
-import uuid
 
 
 class Message(models.Model):
-    uuid = models.UUIDField(blank=False, null=False, unique=True, primary_key=True, default=uuid.uuid4)
     sender = models.ForeignKey(
         User,
         related_name="message_sender",

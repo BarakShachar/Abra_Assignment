@@ -2,16 +2,10 @@ from rest_framework import serializers
 from chat.models import Message
 
 
-class MessageCreateSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Message
-        fields = ['sender', 'subject', 'message', 'receiver']
-
-
 class MessageSerializer(serializers.ModelSerializer):
-    sent_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
+    sent_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S", read_only=True)
 
     class Meta:
         model = Message
-        fields = ['uuid', 'sent_at', 'sender', 'subject', 'message']
+        fields = ['id', 'sent_at', 'sender', 'subject', 'message', 'receiver']
+        read_only_fields = ['sender']
