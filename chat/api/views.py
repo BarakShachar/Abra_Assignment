@@ -15,7 +15,7 @@ class MessageView(APIView):
         serializer: MessageSerializer = MessageSerializer(data=request.data)
         if not serializer.is_valid():
             response: Response = Response({"details": serializer.errors},
-                                          status=status.HTTP_201_CREATED)
+                                          status=status.HTTP_400_BAD_REQUEST)
         else:
             message: Message = serializer.save(sender=request.user)
             response: Response = Response({"details": "message sent", "message_id": message.id},
